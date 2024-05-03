@@ -5,7 +5,7 @@
 namespace {
 	GlobalLayoutHolder::GlobalLayoutHolder()
 	{
-		mLayouts = (LayoutActor**)new LayoutActor * [cModuleCreateLayoutTableCount]; //yes I know we're wasting a perfectly good 4 bytes. Shoot me
+		mLayouts = new LayoutActor * [cModuleCreateLayoutTableCount]; //yes I know we're wasting a perfectly good 4 bytes. Shoot me
 		
 		for (s32 i = 1; i < cModuleCreateLayoutTableCount; i++) {
 			const CreateLayoutEntry entry = cModuleCreateLayoutTable[i];
