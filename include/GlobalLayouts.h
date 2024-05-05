@@ -21,12 +21,7 @@ namespace {
     public:
         GlobalLayoutHolder();
 
-        void movement();
-        void draw();
-        void calcAnim();
-
-        LayoutActor* getLayout(const char* pName);
-
         LayoutActor** mLayouts;
+        s32 mNum;
     };
 };
