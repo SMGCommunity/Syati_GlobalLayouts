@@ -23,12 +23,15 @@ namespace {
 	//Edit CounterLayoutController
 	kmWrite32(0x80471780, 0x38600050); //li r3, 0x4C -> li r3, 0x50
 
-	void createGlobalLayouts(CounterLayoutController* pLayout)
+	void createGlobalLayouts(register CounterLayoutController* pLayout)
 	{
 		MR::connectToSceneLayout(pLayout);
 
-		GlobalLayoutHolder* glh = new GlobalLayoutHolder();
-		asm("stw %0, 0x4C(%1)" : "=r" (glh) : "=r" (pLayout));
+		register GlobalLayoutHolder* glh = new GlobalLayoutHolder();
+		__asm {
+			stw glh, 0x4C(pLayout)
+		};
+		
 	}
 
 	kmCall(0x804657A0, createGlobalLayouts); //Add branch to create code
