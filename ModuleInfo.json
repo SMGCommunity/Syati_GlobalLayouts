@@ -2,6 +2,9 @@
   "Name": "Syati Global Layouts",
   "Author": "[Primary Module]",
   "Description": "Provides functionality to have layouts that are always loaded",
+  "SupportedGames": [
+    "SB4"
+  ],
 
   "ModuleExtensionDefinition": [
     {
